@@ -21,5 +21,5 @@ class Character():
     def shield_gain(self, value):
         self.shield += value
 
-    def attack(): # pass attack object in and then use the attack object stats as a means to calculate the logic behind dealing damage, also pack enemy object so the game knows who to damage.
+    def attack(): # pass action object in and then use the attack object stats as a means to calculate the logic behind dealing damage, also pack enemy object so the game knows who to damage.
         pass
