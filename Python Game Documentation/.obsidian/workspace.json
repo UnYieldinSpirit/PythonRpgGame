@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "e2eb627f3dad8857",
+        "id": "27fb423f58198945",
         "type": "tabs",
         "children": [
           {
-            "id": "c345b42a1bfaba92",
+            "id": "13d9d6e01531227b",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Patch Notes/0.0.0.1.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -85,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Patch Notes/0.0.0.1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Patch Notes/0.0.0.1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,17 +118,14 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Patch Notes/0.0.0.1.md"
-              }
+              "state": {}
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -146,11 +137,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c345b42a1bfaba92",
+  "active": "635dcee181ee0bfc",
   "lastOpenFiles": [
+    "Untitled 1.canvas",
+    "Untitled.canvas",
     "Patch Notes/0.0.0.2.md",
-    "Main Ideas.md",
     "Patch Notes/0.0.0.1.md",
+    "Main Ideas.md",
     "Patch Notes",
     "Patch Notes",
     "Welcome.md"
