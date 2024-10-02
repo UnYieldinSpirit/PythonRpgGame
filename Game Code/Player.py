@@ -5,9 +5,12 @@ from Enemy import Enemy
 class Player(Character):
     def __init__(self) -> None:
         super().__init__()
-        self.health = 100 # stat used to track whether the character is dead or not
-        self.stamina = 75 # stat used for special physical moves
-        self.mana = 50 # stat used for spells
+        self.max_health = 100
+        self.current_health = self.max_health # stat used to track whether the character is dead or not
+        self.max_stamina = 75 
+        self.current_stamina = self.max_stamina # stat used for special physical moves
+        self.max_mana = 50 
+        self.current_mana = self.max_mana # stat used for spells
         self.actions = {
             "Hit" : Actions("Hit", mana_cost = 0, move_value = 5, stamina_cost = 5, move_type = "attack", target = "enemy"),
             "Block" : Actions("Block", mana_cost = 0, move_value = 10, stamina_cost = 10, move_type = "action", target = "self"),
@@ -26,8 +29,8 @@ class Player(Character):
             self.move_selection()
     
     def reduce_resources(self, stamina_cost, mana_cost):
-        self.stamina -= stamina_cost
-        self.mana -= mana_cost
+        self.current_stamina -= stamina_cost
+        self.current_mana -= mana_cost
     
     def check_resources(self, Action):
         """Checks if the caster of the ability has enough stamina or mana to cast the move. Prompts user to select a different move if unable to use that move."""
@@ -51,7 +54,7 @@ class Player(Character):
             Target.takedamage(damage = (Action.move_value + self.attack_value))
     
     # This may be able to be moved to the Game Handler or Game Logic class instead of the Player Class, or the Player Controller Class
-    def display_choices_format(Move):
+    def display_choices_format(self, Move):
         option = f"{Move.name} - "
         if Move.stamina_cost > 0:
             option += f"stamina: {Move.stamina_cost} "
@@ -63,6 +66,10 @@ class Player(Character):
         for i in self.actions:
             print(f"{Player.display_choices_format(Move = i)}")
             # print(f"{i.name} - mana: {i.mana_cost}, stamina: {i.stamina_cost}")
+        
+    def turn(self):
+        pass
+
 
         
 player = Player()

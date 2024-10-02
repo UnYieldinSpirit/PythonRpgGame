@@ -11,8 +11,12 @@
             "id": "13d9d6e01531227b",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Patch Notes/0.0.0.3.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Patch Notes/0.0.0.3.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Patch Notes/0.0.0.3.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Patch Notes/0.0.0.3.md"
+              }
             }
           }
         ]
@@ -137,12 +145,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "635dcee181ee0bfc",
+  "active": "13d9d6e01531227b",
   "lastOpenFiles": [
+    "Patch Notes/0.0.0.2.md",
+    "Patch Notes/0.0.0.3.md",
+    "Patch Notes/0.0.0.1.md",
+    "Untitled",
     "Untitled 1.canvas",
     "Untitled.canvas",
-    "Patch Notes/0.0.0.2.md",
-    "Patch Notes/0.0.0.1.md",
     "Main Ideas.md",
     "Patch Notes",
     "Patch Notes",

@@ -1,9 +1,12 @@
 from Player import Player
 from Enemy import Enemy
+import GameData
 
 print("Welcome to the game test!")
 player = Player()
-enemy = Enemy
+enemy = Enemy("Goblin")
+
+print(GameData.alphabet)
 
 #TODO - Enemy AI
 #TODO - Battle Mechanics
