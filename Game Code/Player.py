@@ -11,10 +11,12 @@ class Player(Character):
         self.current_stamina = self.max_stamina # stat used for special physical moves
         self.max_mana = 50 
         self.current_mana = self.max_mana # stat used for spells
+        self.health_holder = self.current_health
         self.actions = {
-            "Hit" : Actions("Hit", mana_cost = 0, move_value = 5, stamina_cost = 5, move_type = "attack", target = "enemy"),
-            "Block" : Actions("Block", mana_cost = 0, move_value = 10, stamina_cost = 10, move_type = "action", target = "self"),
-            "Buff Thorns" : Actions("Reinforce", mana_cost = 0, move_value = 10, stamina_cost = 10, move_type = "buff", target = "self", stat = "thorns")
+            "Hit" : Actions(name = "Hit", mana_cost = 0, move_value = 5, stamina_cost = 5, move_type = "attack", target = "enemy"),
+            "Block" : Actions(name = "Block", mana_cost = 0, move_value = 10, stamina_cost = 10, move_type = "action", target = "self"),
+            "Buff Thorns" : Actions(name = "Reinforce", mana_cost = 0, move_value = 10, stamina_cost = 10, move_type = "buff", target = "self", stat = "thorns"),
+            "Cast Fireball" : Actions(name = "Cast Fireball", mana_cost = 30, move_value = 30, stamina_cost = 15, move_type = "attack", target = "enemy", stat = "thorns"),
         }
     
     def move_selection(self):
@@ -53,26 +55,26 @@ class Player(Character):
         if Action.type == "attack":
             Target.takedamage(damage = (Action.move_value + self.attack_value))
     
-    # This may be able to be moved to the Game Handler or Game Logic class instead of the Player Class, or the Player Controller Class
     def display_choices_format(self, Move):
+        """Used as a means to format the choices that will be displayed for the user to select for their characters in battle"""
         option = f"{Move.name} - "
-        if Move.stamina_cost > 0:
-            option += f"stamina: {Move.stamina_cost} "
-        if Move.mana_cost > 0:
-            option += f"mana: {Move.mana_cost} "
+        if Move.stamina_cost > 0 and Move.mana_cost > 0:
+            option += f"stamina: {Move.stamina_cost}, mana: {Move.mana_cost}"
+        elif Move.stamina_cost > 0:
+            option += f"stamina: {Move.stamina_cost}"
+        elif Move.mana_cost > 0:
+            option += f"mana: {Move.mana_cost}"
         return option
 
     def display_choices(self):
         for i in self.actions:
-            print(f"{Player.display_choices_format(Move = i)}")
-            # print(f"{i.name} - mana: {i.mana_cost}, stamina: {i.stamina_cost}")
+            print(f"{self.display_choices_format(Move = self.actions.get(i))}")
         
     def turn(self):
-        pass
+        self.display_choices()
 
-
-        
 player = Player()
 enemy = Enemy(name = "Goblin")
 player.buff(player.actions["Buff Thorns"])
+player.display_choices()
 # player.move_selection()
