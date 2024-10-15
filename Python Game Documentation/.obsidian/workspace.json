@@ -4,47 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "27fb423f58198945",
+        "id": "adc58b98c01c36e2",
         "type": "tabs",
         "children": [
           {
-            "id": "13d9d6e01531227b",
+            "id": "948c6d0204df4850",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Patch Notes/0.0.0.3.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "6d933fa047816563",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Patch Notes/0.0.0.4.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "d7d6eea53a7936f0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Patch Notes/0.0.0.5.md",
+                "file": "Patch Notes/0.0.0.6.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -94,8 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "9db9686fc5214aaf",
@@ -111,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Patch Notes/0.0.0.5.md",
+                "file": "Patch Notes/0.0.0.6.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -128,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Patch Notes/0.0.0.5.md",
+                "file": "Patch Notes/0.0.0.6.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -151,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Patch Notes/0.0.0.5.md"
+                "file": "Patch Notes/0.0.0.6.md"
               }
             }
           }
@@ -172,14 +146,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "8ae8844fe50f72d0",
+  "active": "948c6d0204df4850",
   "lastOpenFiles": [
-    "Patch Notes/0.0.0.4.md",
     "Patch Notes/0.0.0.5.md",
+    "Patch Notes/0.0.0.4.md",
+    "Patch Notes/0.0.0.6.md",
+    "Untitled",
     "Patch Notes/0.0.0.3.md",
     "Patch Notes/0.0.0.2.md",
     "Patch Notes/0.0.0.1.md",
-    "Untitled",
     "Untitled 1.canvas",
     "Untitled.canvas",
     "Main Ideas.md",

@@ -1,6 +1,5 @@
 from Player import Player
 from Enemy import Enemy
-import GameData
 
 print("Welcome to the game test!")
 player = Player()

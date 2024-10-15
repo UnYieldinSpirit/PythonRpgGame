@@ -34,9 +34,6 @@ class Character():
     def set_shield(self):
         self.shield = self.shield_standard # a class will have recurring shield when they start their turn
     
-    def move_selection(self):
-        pass
-    
     def check_resources(self, Action):
         """Checks if the caster of the ability has enough stamina or mana to cast the move. Prompts user to select a different move if unable to use that move."""
         move_can_be_casted = True
