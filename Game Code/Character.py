@@ -5,12 +5,13 @@ class Character():
         self.magic_attack = 0 # stat used to track how much extra damage should be added to magic attacks
         self.thorns = 0 # stat used to track how much damage should be reflected back on the attacker
         self.level = 1
+        self.turnSkip = False
 
         # debuffs listed below
         self.burn = 0
         self.hasBurn = False
-        self.cold = 0
-        self.hasCold = False
+        self.cold = 0 # future debuff that will cause the character to freeze and miss a turn
+        self.isFrozen = False
 
     def take_damage(self, damage): # If this can be used for the enemy as well then maybe there is a means of inheritance, creating Parent and child classes? I'll have to look into it.
         """This is the method that causes the player to take damage, this could be used for the enemy or any other entity as well"""
@@ -57,7 +58,21 @@ class Character():
         if Action.type == "attack":
             Target.takedamage(Action.move_value + self.attack_value)
 
-    def take_burn_damage(self):
+    def trigger_burn(self):
         self.take_damage(self.burn)
-        if self.burn > 0:
-            self.burn -= 1
+        self.burn -= 1
+        if self.burn == 0:
+            self.hasBurn = False
+
+    def trigger_freeze(self):
+        self.isFrozen = True
+        self.turnSkip = True
+        self.cold = 0
+
+    def start_turn_effects(self):
+        if self.cold >= 10:
+            self.trigger_freeze()
+    
+    def end_turn_effects(self):
+        if self.hasBurn == True:
+            self.trigger_burn()

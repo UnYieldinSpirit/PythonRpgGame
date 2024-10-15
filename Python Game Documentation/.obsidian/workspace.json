@@ -30,9 +30,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "d7d6eea53a7936f0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Patch Notes/0.0.0.5.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -82,7 +94,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "9db9686fc5214aaf",
@@ -98,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Patch Notes/0.0.0.4.md",
+                "file": "Patch Notes/0.0.0.5.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +128,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Patch Notes/0.0.0.4.md",
+                "file": "Patch Notes/0.0.0.5.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +151,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Patch Notes/0.0.0.4.md"
+                "file": "Patch Notes/0.0.0.5.md"
               }
             }
           }
@@ -146,7 +159,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -158,10 +172,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "6d933fa047816563",
+  "active": "8ae8844fe50f72d0",
   "lastOpenFiles": [
-    "Patch Notes/0.0.0.3.md",
     "Patch Notes/0.0.0.4.md",
+    "Patch Notes/0.0.0.5.md",
+    "Patch Notes/0.0.0.3.md",
     "Patch Notes/0.0.0.2.md",
     "Patch Notes/0.0.0.1.md",
     "Untitled",
