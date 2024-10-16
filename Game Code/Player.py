@@ -11,6 +11,7 @@ class Player(Character):
         self.max_mana = 50
         self.current_mana = self.max_mana # stat used for spells
         self.health_holder = self.current_health
+        self.stamina_replenish = 6
         self.actions = {
             "Hitter" : Actions(name = "Hit", mana_cost = 0, move_value = 5, stamina_cost = 5, move_type = "attack", target = "enemy"),
             "Block" : Actions(name = "Block", mana_cost = 0, move_value = 10, stamina_cost = 10, move_type = "action", target = "self"),

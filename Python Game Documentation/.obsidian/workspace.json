@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "35a05a4d249eb576",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Patch Notes/0.0.0.7.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Patch Notes/0.0.0.6.md",
+                "file": "Patch Notes/0.0.0.7.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Patch Notes/0.0.0.6.md",
+                "file": "Patch Notes/0.0.0.7.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Patch Notes/0.0.0.6.md"
+                "file": "Patch Notes/0.0.0.7.md"
               }
             }
           }
@@ -146,11 +159,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "948c6d0204df4850",
+  "active": "35a05a4d249eb576",
   "lastOpenFiles": [
+    "Patch Notes/0.0.0.6.md",
+    "Patch Notes/0.0.0.7.md",
     "Patch Notes/0.0.0.5.md",
     "Patch Notes/0.0.0.4.md",
-    "Patch Notes/0.0.0.6.md",
     "Untitled",
     "Patch Notes/0.0.0.3.md",
     "Patch Notes/0.0.0.2.md",

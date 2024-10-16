@@ -22,11 +22,13 @@ def turn_increment():
 
 def trigger_start_turn_effects():
     """Automatically triggers any start of turn effects that the character may have applied to them"""
-    pass
+    player.start_turn_effects()
+    enemy.start_turn_effects()
 
 def trigger_end_turn_effects():
     """Automatically triggers any end of turn effects that the character may have applied to them"""
-    pass
+    player.end_turn_effects()
+    enemy.end_turn_effects()
 
 def check_battle_conditions():
     global battle_end_message
