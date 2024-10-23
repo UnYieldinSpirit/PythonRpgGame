@@ -1,9 +1,11 @@
 from Player import Player
 from Enemy import Enemy
+from Demon import Demon
+import GameController
 
 print("Welcome to the game test!")
 player = Player()
-enemy = Enemy("Goblin")
+enemy = Demon()
 
 #TODO - Enemy AI
 #TODO - Battle Mechanics

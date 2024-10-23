@@ -24,7 +24,7 @@ class Player(Character):
         user_input = input("\nSelect a move: ").lower()
         for Action in self.actions:
             if user_input == self.actions.get(Action).name.lower():
-                self.check_resources(self.actions.get(Action), main.enemy)
+                self.check_resources(self.actions.get(Action))
                 break
         else:
             print("Not a valid move...\n")
@@ -34,7 +34,7 @@ class Player(Character):
         self.current_stamina -= stamina_cost
         self.current_mana -= mana_cost
     
-    def check_resources(self, Action, enemy):
+    def check_resources(self, Action):
         """Checks if the caster of the ability has enough stamina or mana to cast the move. Prompts user to select a different move if unable to use that move."""
         move_can_be_casted = True
         if Action.stamina_cost > self.current_stamina:
@@ -70,9 +70,17 @@ class Player(Character):
     def display_choices(self):
         for i in self.actions:
             print(f"{self.display_choices_format(Move = self.actions.get(i))}")
+
+    def display_stats(self):
+        print("Player:")
+        print(f"HP: {self.current_health}/{self.max_health}")
+        print(f"MP: {self.current_mana}/{self.max_mana}")
+        print(f"Stamina: {self.current_stamina}/{self.max_stamina} \n")
         
     def turn(self):
-        self.display_choices()
+        self.display_stats()
+        if self.turnSkip == False:
+            self.move_selection()
 
 # player.buff(player.actions["Buff Thorns"])
 # player.move_selection()
