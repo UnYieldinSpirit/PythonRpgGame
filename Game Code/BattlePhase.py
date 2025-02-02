@@ -1,7 +1,10 @@
 import GameData
 import main as main_game
-    
-def initiate_battle():
+
+turn_count
+battle_conditions
+
+def initiate_battle(player, enemy):
     """Use this to establish what the first turn will be when a battle begins"""
     global battle_conditions
     global turn_count
@@ -14,13 +17,5 @@ def turn_increment():
     global turn_count
     turn_count += 1
     GameData.total_turns += 1
-
-def trigger_start_turn_effects():
-    """Automatically triggers any start of turn effects that the character may have applied to them"""
-    pass
-
-def trigger_end_turn_effects():
-    """Automatically triggers any end of turn effects that the character may have applied to them"""
-    pass
 
 initiate_battle()

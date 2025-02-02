@@ -6,11 +6,12 @@ class Character():
         self.thorns = 0 # stat used to track how much damage should be reflected back on the attacker
         self.level = 1
         self.turnSkip = False
+        self.stamina_regen_rate = 3
 
         # debuffs listed below
-        self.burn = 0
+        self.burn = 0 # debuff that will cause the character to take some end of turn damage
         self.hasBurn = False
-        self.cold = 0 # future debuff that will cause the character to freeze and miss a turn
+        self.cold = 0 # debuff that will cause the character to freeze and miss a turn
         self.isFrozen = False
 
     def take_damage(self, damage): # If this can be used for the enemy as well then maybe there is a means of inheritance, creating Parent and child classes? I'll have to look into it.
@@ -29,7 +30,7 @@ class Character():
         self.__setattr__(Action.stat, self.__getattribute__(Action.stat) - Action.move_value)
         
     def shield_gain(self, value):
-        self.shield += value + self.level
+        self.shield += value
     
     def set_shield(self):
         self.shield = self.shield_standard # a class will have recurring shield when they start their turn
@@ -76,3 +77,6 @@ class Character():
     def end_turn_effects(self):
         if self.hasBurn == True:
             self.trigger_burn()
+        if self.cold < 10:
+            self.isFrozen = False
+            
