@@ -1,11 +1,16 @@
 from Player import Player
 from Enemy import Enemy
+<<<<<<< HEAD
 import BattlePhase
 import GameData
+=======
+from Demon import Demon
+import GameController
+>>>>>>> be4d8b09f446987024880ae0616a403a2bb46c4f
 
 print("Welcome to the game test!")
 player = Player()
-enemy = Enemy("Goblin")
+enemy = Demon()
 
 
 

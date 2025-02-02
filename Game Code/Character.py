@@ -4,12 +4,16 @@ class Character():
         self.attack_value = 0 # stat used to track how much extra damage should be added to physical attacks
         self.magic_attack = 0 # stat used to track how much extra damage should be added to magic attacks
         self.thorns = 0 # stat used to track how much damage should be reflected back on the attacker
-        self.level = 1
         self.turnSkip = False
         self.stamina_regen_rate = 3
 
+<<<<<<< HEAD
         # debuffs listed below
         self.burn = 0 # debuff that will cause the character to take some end of turn damage
+=======
+        # negative effects listed below
+        self.burn = 0
+>>>>>>> be4d8b09f446987024880ae0616a403a2bb46c4f
         self.hasBurn = False
         self.cold = 0 # debuff that will cause the character to freeze and miss a turn
         self.isFrozen = False
@@ -24,57 +28,57 @@ class Character():
         self.current_health -= damage
 
     def buff(self, Action):
+        """This method handles the increasing of whatever stat is affected by the Action"""
         self.__setattr__(Action.stat, Action.move_value + self.__getattribute__(Action.stat))
 
     def debuff(self, Action):
+        """This method handles the decreasing of whatever stat is affected by the Action"""
         self.__setattr__(Action.stat, self.__getattribute__(Action.stat) - Action.move_value)
         
     def shield_gain(self, value):
+<<<<<<< HEAD
+=======
+        """Method used to increase the amount of shield that the character currently has"""
+>>>>>>> be4d8b09f446987024880ae0616a403a2bb46c4f
         self.shield += value
     
     def set_shield(self):
-        self.shield = self.shield_standard # a class will have recurring shield when they start their turn
-    
-    def move_selection(self):
-        pass
-    
-    def check_resources(self, Action):
-        """Checks if the caster of the ability has enough stamina or mana to cast the move. Prompts user to select a different move if unable to use that move."""
-        move_can_be_casted = True
-        if Action.stamina_cost > self.current_stamina:
-            move_can_be_casted = False
-            print("Not enough stamina")
-        if Action.mana_cost > self.current_mana:
-            move_can_be_casted = False
-            print("Not enough stamina")
-        if move_can_be_casted == True:
-            self.action()
-        else:
-            print("Select a different move...")
-            self.move_selection()
+        """Method used to reset the shield of the character back to the predefined number"""
+        self.shield = 0 # a class will have recurring shield when they start their turn
+
+    def stamina_gain(self, value):
+        """Used to increase the stamina that the character has by the value that is passed into it"""
+        self.current_stamina += value
+        if self.current_stamina > self.max_stamina:
+            self.current_stamina = self.max_stamina
 
     def action(self, Action, Target): # pass action object in and then use the attack object stats as a means to calculate the logic behind dealing damage, also pass enemy object so the game knows who to damage.
+        """Character performs an action on a passed in Target, effect changes depending on the action's parameters"""
         print(f"Performing {Action.name} on {Target.name}!")
-        self.check_resources(Action.mana_cost, Action.stamina_cost)
         if Action.type == "attack":
             Target.takedamage(Action.move_value + self.attack_value)
 
     def trigger_burn(self):
+        """Character takes damage based on the burn stat"""
         self.take_damage(self.burn)
         self.burn -= 1
-        if self.burn == 0:
+        if self.burn == 0: # if the amount of burn falls to or below 0, then the character loses the hasBurn variable, preventing this method from running
             self.hasBurn = False
 
     def trigger_freeze(self):
+        """Character becomes frozen, causing their turn to be skipped"""
         self.isFrozen = True
         self.turnSkip = True
         self.cold = 0
 
     def start_turn_effects(self):
+        """Triggers the start of turn effects on the Character afflicted"""
         if self.cold >= 10:
             self.trigger_freeze()
+        self.stamina_gain(value = self.stamina_replenish) 
     
     def end_turn_effects(self):
+        """Triggers the end of turn effects on the Character afflicted"""
         if self.hasBurn == True:
             self.trigger_burn()
         if self.cold < 10:

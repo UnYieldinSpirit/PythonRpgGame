@@ -1,6 +1,5 @@
 from Character import Character
 from Actions import Actions
-from Enemy import Enemy
 
 class Player(Character):
     def __init__(self, enemy) -> None:
@@ -9,11 +8,12 @@ class Player(Character):
         self.name = "Self"
         self.max_health = 100
         self.current_health = self.max_health # stat used to track whether the character is dead or not
-        self.max_stamina = 75 
+        self.max_stamina = 75
         self.current_stamina = self.max_stamina # stat used for special physical moves
         self.max_mana = 50
         self.current_mana = self.max_mana # stat used for spells
         self.health_holder = self.current_health
+        self.stamina_replenish = 6
         self.actions = {
             "Hitter" : Actions(name = "Hit", mana_cost = 0, move_value = 5, stamina_cost = 5, move_type = "attack", target = "enemy"),
             "Block" : Actions(name = "Block", mana_cost = 0, move_value = 10, stamina_cost = 10, move_type = "block", target = "self"),
@@ -47,6 +47,7 @@ class Player(Character):
             move_can_be_casted = False
             print("Not enough mana")
         if move_can_be_casted == True:
+            from main import enemy
             self.reduce_resources(Action.stamina_cost, Action.mana_cost)
             if Action.target == "enemy":
                 self.action(Action, enemy)
@@ -84,10 +85,25 @@ class Player(Character):
     def display_choices(self):
         for i in self.actions:
             print(f"{self.display_choices_format(Move = self.actions.get(i))}")
+
+    def display_stats(self):
+        print("Player:")
+        print(f"HP: {self.current_health}/{self.max_health}")
+        print(f"MP: {self.current_mana}/{self.max_mana}")
+        print(f"Stamina: {self.current_stamina}/{self.max_stamina} \n")
         
     def turn(self):
+<<<<<<< HEAD
         self.display_player_stats()
         player.move_selection()
 
 player = Player()
 # player.buff(player.actions["Buff Thorns"])
+=======
+        self.display_stats()
+        if self.turnSkip == False:
+            self.move_selection()
+
+# player.buff(player.actions["Buff Thorns"])
+# player.move_selection()
+>>>>>>> be4d8b09f446987024880ae0616a403a2bb46c4f
