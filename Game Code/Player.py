@@ -93,17 +93,8 @@ class Player(Character):
         print(f"Stamina: {self.current_stamina}/{self.max_stamina} \n")
         
     def turn(self):
-<<<<<<< HEAD
         self.display_player_stats()
         player.move_selection()
 
 player = Player()
 # player.buff(player.actions["Buff Thorns"])
-=======
-        self.display_stats()
-        if self.turnSkip == False:
-            self.move_selection()
-
-# player.buff(player.actions["Buff Thorns"])
-# player.move_selection()
->>>>>>> be4d8b09f446987024880ae0616a403a2bb46c4f

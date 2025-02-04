@@ -58,8 +58,6 @@ class Character():
         self.check_resources(Action.mana_cost, Action.stamina_cost)
         if Action.type == "attack":
             Target.takedamage(Action.move_value + self.attack_value)
-        if Action.type == "buff":
-            break
 
     def trigger_burn(self):
         self.take_damage(self.burn)
